@@ -342,6 +342,9 @@
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\HomePage.cshtml" />
+    <Content Include="Views\Account\CreateMeeting.cshtml" />
+    <Content Include="Views\Account\JoinMeeting.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
