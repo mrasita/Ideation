@@ -1,6 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@Html.AntiForgeryToken()
 
-<button href="/CreateMeeting.cshtml">Create Meeting</button>
-<button href="/JoinMeeting.cshtml">Create Meeting</button>
+<a href="CreateMeeting">Create Meeting</a>
+<a href="JoinMeeting">Join Meeting</a>

@@ -16,6 +16,12 @@ namespace Ideation.Controllers
 
         private DataContext db = new DataContext();
 
+        public ActionResult HomePage()
+        {
+            return View();
+        }
+
+
         // GET: Account
         public ActionResult Index()
         {
@@ -88,18 +94,37 @@ namespace Ideation.Controllers
             {
                 db.Meetings.Add(meeting);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("HomePage");
             }
 
             return View(meeting);
         }
 
-        public ActionResult HomePage()
+     
+
+
+        // GET: Ideas/Create
+        public ActionResult JoinMeeting()
         {
             return View();
         }
 
+        // POST: Ideas/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult JoinMeeting([Bind(Include = "Id,Idea")] Ideas ideas)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Ideas.Add(ideas);
+                db.SaveChanges();
+                
+            }
 
+            return View(ideas);
+        }
     }
 
 }
